@@ -1,0 +1,6 @@
+kaggle
+tensorflow
+pandas
+numpy
+matplotlib
+pathlib
