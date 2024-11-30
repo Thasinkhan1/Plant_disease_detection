@@ -5,3 +5,7 @@ numpy
 matplotlib
 pathlib
 opencv-python
+Flask
+
+
+#-e . #it automaticaly trigger setup.py file

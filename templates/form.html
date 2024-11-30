@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Disease Detection</title>
+    <link rel="stylesheet"  type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Plant Disease Detection System</h1>
+    </header>
+
+    <main>
+        <section id="upload">
+            <h2>Upload Plant Image</h2>
+            <form id="upload-form" action="/success" method="POST" enctype="multipart/form-data">
+                <input type="file" id="image-upload" name="plant_image" accept="image/*" required>
+                <button type="submit">Detect Disease</button>
+            </form>
+        </section>
+
+        <section id="results">
+            <h2>Results</h2>
+            <div id="result-display">
+                <p>Prediction will appear here after analysis.</p>
+
+                The predicted disease accuracy is{{accuracy}}
+            </div>
+        </section>
+
+        <section id="advice">
+            <h2>Prevention and Advice</h2>
+            <p id="advice-text">Prevention tips and advice will be shown based on the detected disease.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Plant Disease Detection Project</p>
+    </footer>
+</body>
+</html>
