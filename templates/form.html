@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plant Disease Detection</title>
-    <link rel="stylesheet"  type="text/css" href="styles.css">
+    <link rel="stylesheet"  type="text/css" href={{url_for('static', filename='styles.css')}}>
 </head>
 <body>
     <header>
@@ -23,15 +23,27 @@
         <section id="results">
             <h2>Results</h2>
             <div id="result-display">
-                <p>Prediction will appear here after analysis.</p>
 
-                The predicted disease accuracy is{{accuracy}}
+                {%if accuracy%}
+                
+                <p>The predicted disease accuracy is{{accuracy}}%</p>
+                
+                {%else%}
+
+                <p>Prediction will appear here after analysis.</p>
+                {% endif %}
             </div>
         </section>
 
         <section id="advice">
             <h2>Prevention and Advice</h2>
-            <p id="advice-text">Prevention tips and advice will be shown based on the detected disease.</p>
+            <p id="advice-text">
+                {% if advice %}
+                    {{ advice }}
+                {% else %}
+                    Prevention tips and advice will be shown based on the detected disease.
+                {% endif %}
+            </p>
         </section>
     </main>
 
