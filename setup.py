@@ -26,7 +26,7 @@ def get_requirements(file_path:str)->List[str]:
 
 setup(
     
-    name = "Plant Disease Ditection",
+    name = "Plant Disease Detection",
     author = "Thasin khan",
     packages=find_packages(),
     install_require = get_requirements('requirements.txt')

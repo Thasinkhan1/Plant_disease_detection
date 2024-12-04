@@ -1,12 +1,13 @@
 from flask import Flask, render_template, request, jsonify, url_for
-from keras.models import load_model
+# from keras.models import load_model
+# from src.main import plant_disease_cnn
 from keras.preprocessing.image import img_to_array
 import numpy as np
 
 app = Flask(__name__)
 
-
-model = load_model('model_weights.h5')
+# model = plant_disease_cnn()
+# model.load_weights('model_weights.h5')
 
 @app.route("/", methods=["GET", "POST"])
 def welcome():
@@ -20,10 +21,10 @@ def welcome():
             image = img_to_array(image) / 255.0 #normalize pixel value
             image = np.expand_dims(image, axis=0) #add batch diamensions
            
-            #for prediction 
-            prediction = model.predict(image)
-            prediction_class = np.argmax(prediction)
-            accuracy = np.max(prediction) * 100
+            # #for prediction 
+            # prediction = model.predict(image)
+            # prediction_class = np.argmax(prediction)
+            # accuracy = np.max(prediction) * 100
             
             disease_classes = {
                 0: "Blueberry healthy",
