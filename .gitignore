@@ -3,11 +3,11 @@ dataset/
 Dataset/
 model_weights.h5/
 data/
-src/main.ipynb
-src/main2.py
-src/main.py
-src/trained_plant_diesease.h5
-src/model_config.json
+main.ipynb/src
+main2.py/src
+main.py/src
+trained_plant_diesease.h5/src
+model_config.json/src
 static/
 setup.py/
 templates/
