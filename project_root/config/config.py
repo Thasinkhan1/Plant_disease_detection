@@ -1,6 +1,7 @@
 from keras.regularizers import l2 # type: ignore
 from keras.layers import  GlobalAveragePooling2D # type: ignore
 from keras.optimizers import SGD,Adam # type: ignore
+from keras.applications import VGG16 # type: ignore
 
 
 POOLING = GlobalAveragePooling2D()
@@ -29,7 +30,7 @@ IMAGE_SIZE = (128, 128)
 
 KERNEL_SIZE = (3, 3)
 
-OPTIMIZER = Adam()
+OPTIMIZER = Adam
 
 LOSS_FN = "categorical_crossentropy"
 
@@ -37,7 +38,7 @@ INPUT_SHAPE = (128, 128, 3)
 
 INCLUDE_TOP = False
 
-MODEL = "VGG16"  
+MODEL = VGG16  
 
 KERNEL_INITIALIZER = "he_normal"
 

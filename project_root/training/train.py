@@ -1,7 +1,7 @@
 from config import config
 import tensorflow as tf
 from keras.models import load_model # type: ignore
-from keras.layers import Model # type: ignore
+from keras.models import Model # type: ignore
 from keras.layers import  Dense,Conv2D,BatchNormalization,Dropout # type: ignore
 from data_transformation import data_augmentation
 from data_loading import data_loading
@@ -38,12 +38,17 @@ def plant_disease_cnn():
 
 def training():
     model = plant_disease_cnn()
+    print(model.summary())
     batch_size = config.BATCH_SIZE
+    training_data = data_augmentation.data_augmentation()
     history = model.fit(
-    data_augmentation.data_augmentation,
+    training_data,
     validation_data=data_loading.validation_set,
     epochs=config.EPOCHS,  # Adjust the number of epochs based on your dataset
     steps_per_epoch=len(data_loading.TRAIN_DF) // batch_size,
     validation_steps=len(data_loading.VALID_DF) // batch_size)
     
     return history
+
+if __name__ == "__main__":
+    print(training())
