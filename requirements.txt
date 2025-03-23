@@ -1,0 +1,11 @@
+kaggle
+tensorflow
+pandas
+numpy
+matplotlib
+pathlib
+opencv-python
+Flask
+scikit-learn
+
+#-e . #it automaticaly trigger setup.py file
