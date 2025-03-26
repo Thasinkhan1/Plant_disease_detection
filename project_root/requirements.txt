@@ -1,0 +1,12 @@
+kaggle
+tensorflow
+pandas
+numpy
+matplotlib
+pathlib
+
+Flask
+scikit-learn
+streamlit
+pillow
+opencv-python-headless
