@@ -2,7 +2,8 @@ import pandas as pd
 import pathlib
 from config import config
 import tensorflow as tf
-
+import os
+import gc
 def train_test_df(path,is_test=False):
 
     img_path = list()
@@ -33,12 +34,16 @@ def train_test_df(path,is_test=False):
 
     return pd.DataFrame(data={"img_path":img_path,"label":img_label})    
 
-TRAIN_DF  = train_test_df(config.TRAIN_PATH, is_test=False)
-VALID_DF  = train_test_df(config.VALID_PATH, is_test=False)
-TEST_DF  = train_test_df(config.TEST_PATH, is_test=True)
+train_path =  os.path.abspath(config.TRAIN_PATH)
+valid_path = os.path.abspath(config.VALID_PATH)
+test_path = os.path.abspath(config.TEST_PATH)
+
+TRAIN_DF  = train_test_df(train_path, is_test=False)
+VALID_DF  = train_test_df(valid_path, is_test=False)
+TEST_DF  = train_test_df(test_path, is_test=True)
 
 training_set = tf.keras.utils.image_dataset_from_directory(
-    config.TRAIN_PATH,
+    train_path,
     labels="inferred",
     label_mode="categorical",
     class_names=None,
@@ -54,8 +59,9 @@ training_set = tf.keras.utils.image_dataset_from_directory(
     crop_to_aspect_ratio=False
 )
 
+
 validation_set = tf.keras.utils.image_dataset_from_directory(
-    config.VALID_PATH,
+    valid_path,
     labels="inferred",
     label_mode="categorical",
     class_names=None,
@@ -70,3 +76,15 @@ validation_set = tf.keras.utils.image_dataset_from_directory(
     follow_links=False,
     crop_to_aspect_ratio=False
 )
+
+
+if __name__ == "__main__":
+    
+    print(TRAIN_DF.head())
+    for images, labels in training_set.take(1):
+        print("Batch shape:", images.shape)
+        print("Labels shape:", labels.shape)
+        print("First batch of labels:", labels.numpy())
+    del training_set
+    del validation_set
+    gc.collect()
