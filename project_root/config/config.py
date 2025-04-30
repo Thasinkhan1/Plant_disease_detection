@@ -2,20 +2,22 @@ from keras.regularizers import l2 # type: ignore
 from keras.layers import  GlobalAveragePooling2D # type: ignore
 from keras.optimizers import SGD,Adam # type: ignore
 from keras.applications import VGG16 # type: ignore
+import os
 
 
 POOLING = GlobalAveragePooling2D()
 
 
-TRAIN_PATH = "/home/thasin/plant_disease/project_root/dataset/train"
-VALID_PATH = "/home/thasin/plant_disease/project_root/dataset/valid"
-TEST_PATH = "/home/thasin/plant_disease/project_root/dataset/test"
 
+BASE_PATH = os.path.dirname(os.path.abspath(__file__))
+TRAIN_PATH = os.path.join(BASE_PATH, "dataset/train")
+VALID_PATH = os.path.join(BASE_PATH, "dataset/valid")
+TEST_PATH = os.path.join(BASE_PATH, "dataset/test")
 DATA_DIR = "dataset"
 
 SAVED_MODEL_FILE = "models.h5"
-SAVED_MODEL_PATH = "/home/thasin/plant_disease/project_root/models/models.h5"
-IMAGE_PATH_FOR_TESTING = "/home/thasin/plant_disease/project_root/dataset/test/AppleCedarRust1.JPG"
+SAVED_MODEL_PATH = "models/models.h5"
+IMAGE_PATH_FOR_TESTING = "dataset/test/AppleCedarRust1.JPG"
 
 EPSILON = 0.001
 
@@ -48,7 +50,7 @@ HIDDEN_ACTIVATION = "relu"
 
 OUTPUT_LYR_ACTIVATION = "softmax"
 
-APP_BG_IMG = "/home/thasin/plant_disease/project_root/models/img1.jpeg"
+APP_BG_IMG = "models/img1.jpeg"
 
 
 CLASS_NAMES = [

@@ -34,9 +34,10 @@ def train_test_df(path,is_test=False):
 
     return pd.DataFrame(data={"img_path":img_path,"label":img_label})    
 
-train_path =  os.path.abspath(config.TRAIN_PATH)
-valid_path = os.path.abspath(config.VALID_PATH)
-test_path = os.path.abspath(config.TEST_PATH)
+#train_path =  os.path.abspath(config.TRAIN_PATH)
+train_path =  "dataset/train"
+valid_path = "dataset/valid"
+test_path = "dataset/valid"
 
 TRAIN_DF  = train_test_df(train_path, is_test=False)
 VALID_DF  = train_test_df(valid_path, is_test=False)
