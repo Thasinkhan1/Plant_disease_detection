@@ -1,4 +1,3 @@
-# Updated README content provided by the user
 readme_content_updated = """
 # 🌿 Plant Disease Detection App
 
