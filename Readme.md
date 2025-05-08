@@ -1,4 +1,3 @@
-readme_content_updated = """
 # 🌿 Plant Disease Detection App
 
 > **"Early detection. Better protection."**  
