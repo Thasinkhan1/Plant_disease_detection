@@ -28,22 +28,12 @@
 2. 🤖 **Model** detects the disease  
 3. 📌 **Displays** disease name with confidence percentage  
 
----
-
-## 🖼️ Screenshots
-
-| Upload Image | Prediction |
-|--------------|------------|
-| ![upload](screens/upload.png) | ![predict](screens/predict.png) |
-
----
-
 ## 🛠️ Tech Stack
 
 | Category     | Tools Used                                  |
 |--------------|---------------------------------------------|
 | Model        | Python, TensorFlow/Keras                    |
-| UI/UX        | Streamlit or Flask                          |
+| UI/UX        | Streamlit                                   |
 | Data         | PlantVillage Dataset (via Kaggle)           |
 | Others       | Pandas, NumPy, OpenCV, Matplotlib, scikit-learn |
 
@@ -53,7 +43,7 @@
 
 ```bash
 # Clone the repo
-git clone https://github.com/yourusername/plant-disease-app
+git clone https://github.com/Thasinkhan1/Plant_disease_detection
 
 # Move into the directory
 cd plant-disease-app
@@ -62,4 +52,4 @@ cd plant-disease-app
 pip install -r requirements.txt
 
 # Run the app
-streamlit run app.py  # or python app.py for Flask
+streamlit run app.py  
