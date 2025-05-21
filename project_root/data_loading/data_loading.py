@@ -79,13 +79,13 @@ validation_set = tf.keras.utils.image_dataset_from_directory(
 )
 
 
-if __name__ == "__main__":
+# if __name__ == "__main__":
     
-    print(TRAIN_DF.head())
-    for images, labels in training_set.take(1):
-        print("Batch shape:", images.shape)
-        print("Labels shape:", labels.shape)
-        print("First batch of labels:", labels.numpy())
-    del training_set
-    del validation_set
-    gc.collect()
+#     print(TRAIN_DF.head())
+#     for images, labels in training_set.take(1):
+#         print("Batch shape:", images.shape)
+#         print("Labels shape:", labels.shape)
+#         print("First batch of labels:", labels.numpy())
+#     del training_set
+#     del validation_set
+#     gc.collect()
