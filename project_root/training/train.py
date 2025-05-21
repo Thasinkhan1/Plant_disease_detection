@@ -50,5 +50,5 @@ def training():
     
     return history
 
-if __name__ == "__main__":
-    print(training())
+# if __name__ == "__main__":
+#     print(training())
