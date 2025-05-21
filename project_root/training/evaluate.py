@@ -16,5 +16,5 @@ def evaluate_model():
 
     print(f"Validation Accuracy: {valid_acc:.4f}, Validation Loss: {valid_loss:.4f}")
 
-if __name__ == "__main__":
-    evaluate_model()
+# if __name__ == "__main__":
+#     evaluate_model()
