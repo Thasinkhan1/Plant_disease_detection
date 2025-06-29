@@ -1,41 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Plant Disease Detection</title>
-  <link rel="stylesheet" href="static/style.css" />
-</head>
-<body>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Plant Disease Detection</title>
+    <link rel="stylesheet" href="static/style.css" />
+  </head>
+  <body>
 
-  <header>
-    <h1>🌿 Plant Disease Detection</h1>
-    <p>Upload a leaf image to identify disease and get treatment advice</p>
-  </header>
+    <header>
+      <h1>🌿 Plant Disease Detection</h1>
+      <p>Upload a leaf image to identify disease and get treatment advice</p>
+    </header>
 
-  <main>
-    <section class="upload-section">
-      <label for="imageInput">Choose a plant leaf image</label>
-      <input type="file" id="imageInput" accept="image/*" />
-      <button onclick="predict()">Detect Disease</button>
-    </section>
+    <main>
+      <section class="upload-section">
+        <label for="imageInput">Choose a plant leaf image</label>
+        <input type="file" id="imageInput" accept="image/*" />
+        <button onclick="predict()">Detect Disease</button>
+      </section>
 
-    <section id="preview" class="preview-section hidden">
-      <h2>Image Preview</h2>
-      <img id="imagePreview" />
-    </section>
+      <section id="preview" class="preview-section hidden">
+        <h2>Image Preview</h2>
+        <img id="imagePreview" />
+      </section>
 
-    <section id="result" class="result-section hidden">
-      <h2>🧪 Prediction Result</h2>
-      <p id="diseaseResult"></p>
-      <p id="adviceText" class="advice-text"></p>
-    </section>
-  </main>
+      <section id="result" class="result-section hidden">
+        <h2>🧪 Prediction Result</h2>
+        <p id="diseaseResult"></p>
+        <p id="adviceText" class="advice-text"></p>
+      </section>
+    </main>
 
-  <footer>
-    <p>© 2025 Plant AI | Built with ❤️</p>
-  </footer>
+    <footer>
+      <p>© 2025 Plant AI | Owner:Thasin Khan</p>
+    </footer>
 
-  <script src="static/script.js"></script>
-</body>
-</html>
+    <script src="static/script.js"></script>
+  </body>
+  </html>
