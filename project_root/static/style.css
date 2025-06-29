@@ -1,0 +1,104 @@
+/* Global Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  /* Body */
+  body {
+    background-color: #f0fdf4;
+    color: #1f2937;
+    line-height: 1.6;
+    padding: 20px;
+  }
+  
+  /* Header */
+  header {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #166534;
+    color: white;
+    border-radius: 10px;
+  }
+  
+  header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  
+  /* Upload Section */
+  .upload-section {
+    background-color: white;
+    padding: 30px;
+    max-width: 600px;
+    margin: 30px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .upload-section label {
+    display: block;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+  }
+  
+  .upload-section input {
+    margin-bottom: 20px;
+  }
+  
+  .upload-section button {
+    background-color: #22c55e;
+    color: white;
+    padding: 10px 25px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .upload-section button:hover {
+    background-color: #15803d;
+  }
+  
+  /* Preview Section */
+  .preview-section,
+  .result-section {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+    text-align: center;
+  }
+  
+  .preview-section img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .advice-text {
+    font-style: italic;
+    margin-top: 10px;
+    color: #4b5563;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 0.9em;
+    color: #6b7280;
+  }
+  
+  /* Hidden class */
+  .hidden {
+    display: none;
+  }
+  
