@@ -1,7 +1,7 @@
 import os
 import tensorflow as tf # type: ignore
 import numpy as np # type: ignore
-from project_root.config import config
+from config import config
 import requests
 
 MODEL_PATH = "saved_model/model.h5"

@@ -4,8 +4,8 @@ from fastapi.templating import Jinja2Templates # type: ignore
 from fastapi.staticfiles import StaticFiles # type: ignore
 from PIL import Image # type: ignore
 from io import BytesIO
-from project_root.fastapi.predictors import predict
-from project_root.config import config
+from api.predictors import predict
+from config import config
 from keras.models import load_model # type: ignore
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
@@ -20,8 +20,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-app.mount("/static", StaticFiles(directory="project_root/static"), name="static")
-templates = Jinja2Templates(directory="project_root/templates")
+app.mount("/static", StaticFiles(directory="static"), name="static")
+templates = Jinja2Templates(directory="templates")
 
 # @app.on_event("startup")
 # def startup_event():

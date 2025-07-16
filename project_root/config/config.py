@@ -16,7 +16,7 @@ TEST_PATH = os.path.join(BASE_PATH, "Dataset/test")
 DATA_DIR = "Dataset"
 
 SAVED_MODEL_FILE = "model.h5"
-SAVED_MODEL_PATH = "project_root/models/model.h5"
+SAVED_MODEL_PATH = "models/model.h5"
 IMAGE_PATH_FOR_TESTING = "Dataset/test/AppleCedarRust1.JPG"
 
 EPSILON = 0.001

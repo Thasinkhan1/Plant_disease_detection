@@ -1,11 +1,12 @@
-kaggle
 tensorflow
 pandas
 numpy
-matplotlib
 pathlib
-Flask
+FastAPI
+fastapi
+uvicorn
 scikit-learn
-streamlit
 pillow
 opencv-python-headless
+jinja2
+python-multipart
