@@ -10,7 +10,7 @@ function predict() {
   document.getElementById("preview").classList.remove("hidden");
   document.getElementById("imagePreview").src = URL.createObjectURL(file);
 
-  fetch("http://localhost:8000/predict", {
+  fetch("/predict", {
     method: "POST",
     body: formData
   })
