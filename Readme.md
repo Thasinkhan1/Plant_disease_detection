@@ -1,12 +1,13 @@
 # 🌿 Plant Disease Detection App
 
 > **"Early detection. Better protection."**  
-> An AI-powered tool to identify plant diseases, using transfer learning by customizing with different techniques like initialization, regularization, dropout, GlobalAveragePooling, to improve the model performance and reduce overfitting.  
+> An AI-powered tool to identify plant diseases, using transfer learning by customizing with different techniques like initialization, regularization, dropout, GlobalAveragePooling, to improve the model performance and reduce overfitting and also use Data Augmentation.  
 > Built with Docker containerization, and currently working on integrating a chatbot into this project that answers your queries live related to plant disease prevention and care.
-
+>Deployed on AWS EC2 instance using Docker and FastAPI with frontend using HTML/CSS/JS
 ---
 
 ## 🔥 Live Demo
+>http://54.243.4.84:8000 
 
 🎥 **Watch the app in action:**  
 📌 To watch the video, please open the attached `.mp4` file.
@@ -33,9 +34,10 @@
 | Category     | Tools Used                                  |
 |--------------|---------------------------------------------|
 | Model        | Python, TensorFlow/Keras                    |
-| UI/UX        | Streamlit                                   |
+| Frontend/Backend     | HTML/CSS/JS  and FastAPI            |
 | Data         | PlantVillage Dataset (via Kaggle)           |
-| Others       | Pandas, NumPy, OpenCV, Matplotlib, scikit-learn |
+| Others       | Pandas, NumPy, OpenCV, Matplotlib, scikit-learn FastAPI Docker |
+
 
 ---
 
@@ -52,4 +54,4 @@ cd plant-disease-app
 pip install -r requirements.txt
 
 # Run the app
-streamlit run app.py  
+uvicorn project_root.api.main::app --reload
