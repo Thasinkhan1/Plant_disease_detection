@@ -9,8 +9,8 @@ function predict() {
 
   document.getElementById("preview").classList.remove("hidden");
   document.getElementById("imagePreview").src = URL.createObjectURL(file);
-
-  fetch("http://54.243.4.84:8000/predict", {
+//http://54.243.4.84:8000/predict
+  fetch("http://127.0.0.1:8000/predict", {
     method: "POST",
     body: formData
   })
@@ -25,3 +25,5 @@ function predict() {
       console.error(err);
     });
 }
+
+//uvicorn api.main:app --reload
