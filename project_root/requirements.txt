@@ -1,0 +1,13 @@
+tensorflow
+pandas
+numpy
+pathlib
+FastAPI
+fastapi
+uvicorn
+scikit-learn
+pillow
+opencv-python-headless
+jinja2
+python-multipart
+gdown
