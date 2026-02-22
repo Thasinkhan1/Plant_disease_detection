@@ -1,3 +1,5 @@
+import os 
+import uvicorn
 import numpy as np # type: ignore
 from fastapi import FastAPI, Request, UploadFile, File
 from fastapi.templating import Jinja2Templates # type: ignore
@@ -37,3 +39,11 @@ async def predict_disease(request: Request, file: UploadFile = File(...)):
         "advice": advice
     })
     
+@app.get("/health")
+def health():
+    return {"status": "ok"}
+
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port)
