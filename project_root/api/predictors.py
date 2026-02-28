@@ -29,7 +29,7 @@ def load_model_once():
     if MODEL is None:
         download_model()
         print("Loading model...")
-        MODEL = load_model(MODEL_PATH)
+        MODEL = load_model(MODEL_PATH, compile=False)
         print("Model loaded successfully.")
 
 def predict(image):
