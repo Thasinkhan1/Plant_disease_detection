@@ -10,7 +10,7 @@ from api.predictors import predict
 from config import config
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
-
+from data_transformation.data_augmentation import clean_class_name
 
 app = FastAPI()
 
@@ -29,15 +29,31 @@ async def predict_disease(request: Request, file: UploadFile = File(...)):
     class_name = config.CLASS_NAMES[class_idx]
     confidence = float(np.max(preds)) * 100
     #advice = config.ADVICE[class_name]
-    advice = config.ADVICE.get(class_name, {
-        "check": "No advice available.",
-        "advice": "Please consult an expert."
-    })
-    return JSONResponse({
-        "prediction": class_name,
-        "confidence": f"{confidence:.2f}",
-        "advice": advice
-    })
+    readable_name = clean_class_name(class_name)
+    
+    if "healthy" in readable_name.lower():
+        return JSONResponse({
+            "status": "healthy",
+            "disease_name": "Healthy",
+            "confidence": round(confidence, 2),
+            "message": "The plant appears healthy."
+        })
+
+    else:
+        advice = config.ADVICE.get(class_name, {
+            "care": "No care info available.",
+            "prevention": "No prevention info available.",
+            "organic_medicine": "Consult expert.",
+            "chemical_medicine": "Consult expert.",
+            "precautions": "Follow safety guidelines."
+        })
+
+        return JSONResponse({
+            "status": "diseased",
+            "disease_name": readable_name,
+            "confidence": round(confidence, 2),
+            "advice": advice
+        })
     
 @app.get("/health")
 def health():
